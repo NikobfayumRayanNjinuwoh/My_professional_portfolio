@@ -1,0 +1,425 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    line-height: 1.6;
+    background: #070b16;
+    overflow-x: hidden;
+}
+
+main {
+    padding-top: 100px;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    background: rgba(15, 23, 42, .95);
+    backdrop-filter: blur(10px);
+}
+
+.header-inner {
+    padding: 15px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.logo {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #3b82f6;
+}
+
+.nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 26px;
+    height: 3px;
+    margin: 5px 0;
+    background: #fff;
+    border-radius: 999px;
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.nav-toggle.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.nav-toggle.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    transition: .3s;
+    font-weight: 500;
+}
+
+.nav-links li a:hover {
+    color: #3b82f6;
+}
+
+section {
+    padding: 100px 0;
+    scroll-margin-top: 110px;
+}
+
+.hero {
+    min-height: calc(100vh - 100px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.hero-text h1 {
+    font-size: 3.5rem;
+}
+
+.hero-text h1 span {
+    color: #3b82f6;
+}
+
+.hero-text h3 {
+    margin: 18px 0;
+    color: #94a3b8;
+}
+
+.hero-text p {
+    margin-bottom: 25px;
+    max-width: 700px;
+}
+
+.hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-block;
+    padding: 14px 26px;
+    background: #3b82f6;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: .3s;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    background: #2563eb;
+}
+
+.btn-outline {
+    background: transparent;
+    border: 2px solid #3b82f6;
+}
+
+.hero-image {
+    text-align: center;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 320px;
+    border-radius: 50%;
+    border: 5px solid #3b82f6;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-size: 2.5rem;
+    color: #3b82f6;
+}
+
+.about,
+.skills,
+.projects,
+.contact,
+.hero
+ {
+    background: #070b16;
+ 
+}
+
+.about-content {
+    text-align: center;
+    max-width: 820px;
+    margin: auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+.skill-card {
+    background: #2c70dd;
+    color: black;
+    font-weight: 900;
+    padding: 25px;
+    border-radius: 16px;
+    text-align: center;
+    transition: transform .3s;
+}
+
+.skill-card:hover {
+    transform: translateY(-4px);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+}
+
+.project-card {
+    background: #1e293b;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: transform .3s;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+}
+
+.project-card img {
+    width: 100%;
+    display: block;
+
+}
+
+.project-content {
+    padding: 22px;
+}
+
+.project-content h3 {
+    margin-bottom: 12px;
+}
+
+.contact-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    align-items: start;
+    max-width: 1100px;
+    margin: auto;
+    padding: 10px;
+}
+
+.contact-methods {
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+.contact-methods h3 {
+    margin-bottom: 20px;
+}
+
+.qr-code {
+    width: 100%;
+    max-width: 280px;
+    border-radius: 18px;
+    margin-bottom: 20px;
+}
+
+.contact-links {
+    display: grid;
+    gap: 12px;
+}
+
+.contact-links a {
+    display: inline-block;
+    padding: 14px 20px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 12px;
+    border: 1px solid #334155;
+}
+
+.contact-links a:hover {
+    background: #1d4ed8;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: #1e293b;
+    padding: 30px;
+    border-radius: 18px;
+}
+
+input,
+textarea {
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    background: #0f172a;
+    color: #fff;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #94a3b8;
+}
+
+textarea {
+    resize: none;
+    min-height: 150px;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 0;
+    background: #020617;
+}
+
+.whatsapp-logo {
+    width: 40px;
+    height: 40px;
+    vertical-align: middle;
+    margin-right: 8px;
+
+}
+
+@media (max-width:1024px) {
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width:768px) {
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        left: 0;
+        background: rgba(15, 23, 42, .98);
+        flex-direction: column;
+        gap: 0;
+        overflow: hidden;
+        max-height: 0;
+        transition: max-height .3s ease;
+    }
+
+    .nav-links.active {
+        max-height: 260px;
+        padding: 20px 0;
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, .08);
+    }
+
+    .nav-links li:first-child {
+        border-top: none;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 0;
+    }
+
+    .hero-text h1 {
+        font-size: 2.6rem;
+    }
+
+    .hero-text p {
+        margin-bottom: 20px;
+    }
+
+    .btn,
+    .contact-links a {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+@media (max-width:480px) {
+    .hero-text h1 {
+        font-size: 2rem;
+    }
+
+    .hero-text h3 {
+        font-size: 1rem;
+    }
+
+    .section-title h2 {
+        font-size: 2rem;
+    }
+
+    .project-content,
+    .contact-methods,
+    form {
+        padding: 20px;
+    }
+
+    .qr-code {
+        max-width: 100%;
+    }
+}
