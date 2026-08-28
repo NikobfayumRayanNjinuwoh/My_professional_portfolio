@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: rgb(97, 100, 102);
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        .form-Reg {
+            background-color: rgba(255, 255, 255, 0.6);
+            width:650px;
+            height: 115vh;
+            text-align: center;
+            border-radius: 15px;
+            margin: 0 auto;
+        }
+
+        input , select, img, button{
+            margin-top: 30px;
+            padding: 15px;
+            border-radius: 10px;
+            border-color: black;
+            width: 290px;
+        }
+
+        input, select{
+            opacity: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-Reg">
+        <img src="" alt="logo">
+
+        <br>
+
+        <label for="">First Name</label>
+        <input type="text" placeholder="Enter First Name" required>
+
+        <br>
+
+        <label for="">MIddle Name</label>
+        <input type="text" placeholder="Enter Middle Name" required>
+
+        <br>
+
+
+        <label for="">Last Name</label>
+        <input type="text" placeholder="Enter Last Name" required>
+
+        <br>
+
+
+        <label for="">Date Of Birth</label>
+        <input type="date" required>
+
+        <br>
+
+       <label for="">Gender</label>
+        <select name="Gender" id="">
+            <option value="">Male</option>
+            <option value="">Female</option>
+            <option value="">Others</option>
+        </select>
+
+        <br>
+
+        <label for="">Place Of Birth</label>
+        <input type="text" placeholder="Enter place of Birth">
+
+        <br>
+
+        <label for="">Nationality</label>
+        <input type="text" placeholder="Please Enter Your Nationality" required>
+
+        <br>
+
+        <label for="">Upload Photo</label>
+        <input type="file" accept="image/*" required>
+
+        <br>
+
+        <button type="submit">SUBMIT</button>
+    </div>
+</body>
+
+</html>
