@@ -99,6 +99,9 @@
                 <div class="skill-card">
                     <img class="skill-img" src="Reactlogo.jpg" alt="basic react.js programming logo">
                     <div>Basic React.js Programming</div>
+                </div><div class="skill-card">
+                    <img class="skill-img" src="database.jpg" alt="Database administration/SL programing ">
+                    <div>Database administration/SL programing </div>
                 </div>
             </div>
         </div>
@@ -167,11 +170,13 @@
         const navToggle = document.querySelector('.nav-toggle');
         const navLinks = document.querySelector('.nav-links');
         const navLinksItems = document.querySelectorAll('.nav-links a');
+        
         navToggle.addEventListener('click', () => {
             const isOpen = navLinks.classList.toggle('active');
             navToggle.classList.toggle('open');
             navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
         });
+        
         navLinksItems.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.classList.remove('active');
@@ -179,6 +184,62 @@
                 navToggle.setAttribute('aria-expanded', 'false');
             });
         });
+
+        // Active navigation indicator on scroll
+        const sections = document.querySelectorAll('section[id]');
+        const navLinksList = document.querySelectorAll('.nav-links a');
+
+        function setActiveNavLink() {
+            const scrollY = window.pageYOffset;
+            
+            sections.forEach(section => {
+                const sectionHeight = section.offsetHeight;
+                const sectionTop = section.offsetTop - 150;
+                const sectionId = section.getAttribute('id');
+                const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+                
+                if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+                    navLinksList.forEach(link => link.classList.remove('active'));
+                    if (navLink) navLink.classList.add('active');
+                }
+            });
+        }
+
+        window.addEventListener('scroll', setActiveNavLink);
+
+        // Intersection Observer for scroll reveal animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    
+                    // For skill cards, add staggered delay
+                    if (entry.target.classList.contains('skill-card')) {
+                        const skillCards = document.querySelectorAll('.skill-card');
+                        const index = Array.from(skillCards).indexOf(entry.target);
+                        entry.target.style.transitionDelay = `${index * 0.1}s`;
+                    }
+                    
+                    // For project cards, add staggered delay
+                    if (entry.target.classList.contains('project-card')) {
+                        const projectCards = document.querySelectorAll('.project-card');
+                        const index = Array.from(projectCards).indexOf(entry.target);
+                        entry.target.style.transitionDelay = `${index * 0.15}s`;
+                    }
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.about-content, .section-title, .contact-container, .skill-card, .project-card').forEach(el => {
+            observer.observe(el);
+        });
+
         document.querySelector('form').addEventListener('submit', async function (e) {
             e.preventDefault();
             const form = e.target;
